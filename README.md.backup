@@ -196,7 +196,7 @@ detox test
 
 创建 `.env` 文件：
 ```env
-API_BASE_URL=http://129.226.223.156:5000/api
+API_BASE_URL=http://localhost:5000/api
 APP_ENV=development
 DEBUG=true
 ```

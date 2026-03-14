@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo "🚀 干净推送：Ancient Tree App"
+echo "======================================"
+echo ""
+
+echo "📋 请使用以下命令手动推送："
+echo ""
+echo "1. 设置远程仓库："
+echo "   git remote add origin https://github.com/likan19841106/ancient-tree-app.git"
+echo ""
+echo "2. 推送代码："
+echo "   git push -u origin main"
+echo ""
+echo "🔐 身份验证时输入："
+echo "   Username: likan19841106"
+echo "   Password: 你的 Personal Access Token"
+echo ""
+echo "💡 确保 Token 有 'repo' 和 'workflow' 权限"
+echo ""
+echo "📊 成功后访问："
+echo "   https://github.com/likan19841106/ancient-tree-app/actions"

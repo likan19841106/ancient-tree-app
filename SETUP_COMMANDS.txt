@@ -1,0 +1,78 @@
+# ============================================
+# GitHub 云构建 - 完整命令集
+# ============================================
+
+# 1. 首先在浏览器中创建 GitHub 仓库：
+#    访问: https://github.com/new
+#    仓库名: ancient-tree-app
+#    ❌ 不要勾选: README, .gitignore, license
+#    点击: Create repository
+
+# 2. 复制仓库URL，格式如：
+#    https://github.com/YOUR_USERNAME/ancient-tree-app.git
+
+# 3. 在终端中执行以下命令（替换 YOUR_USERNAME）：
+
+# 添加远程仓库
+git remote add origin https://github.com/YOUR_USERNAME/ancient-tree-app.git
+
+# 重命名分支
+git branch -M main
+
+# 推送代码
+git push -u origin main
+
+# ============================================
+# 身份验证说明
+# ============================================
+
+# 当提示输入密码时：
+# 用户名: 你的 GitHub 用户名
+# 密码: GitHub Personal Access Token
+
+# 如何创建 Token：
+# 1. 访问: https://github.com/settings/tokens
+# 2. 点击: Generate new token
+# 3. 选择: repo 权限
+# 4. 点击: Generate token
+# 5. 复制: 生成的令牌（作为密码使用）
+
+# ============================================
+# 构建完成后
+# ============================================
+
+# 查看构建进度：
+# 访问: https://github.com/YOUR_USERNAME/ancient-tree-app/actions
+
+# 下载 APK：
+# 1. 点击最新的构建工作流
+# 2. 在 Artifacts 部分下载 "android-apk"
+# 3. 将 APK 文件安装到 Android 手机
+
+# ============================================
+# 后续更新代码
+# ============================================
+
+# 更新代码后自动构建新 APK：
+git add .
+git commit -m "更新描述"
+git push
+
+# ============================================
+# 常见问题
+# ============================================
+
+# 如果提示 "remote origin already exists"：
+git remote remove origin
+git remote add origin https://github.com/YOUR_USERNAME/ancient-tree-app.git
+
+# 如果提示 "failed to push some refs"：
+git pull origin main --allow-unrelated-histories
+git push -u origin main
+
+# 如果需要查看当前远程仓库：
+git remote -v
+
+# ============================================
+# 完成！🎉
+# ============================================
