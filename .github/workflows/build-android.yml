@@ -22,7 +22,14 @@ jobs:
         cache: 'npm'
     
     - name: Install dependencies
-      run: npm ci
+      run: |
+        npm ci
+        echo "=== Node.js版本 ==="
+        node --version
+        echo "=== npm版本 ==="
+        npm --version
+        echo "=== Expo版本 ==="
+        npx expo --version
     
     - name: Setup Java
       uses: actions/setup-java@v4
@@ -38,12 +45,17 @@ jobs:
         yes | sdkmanager --licenses || true
     
     - name: Generate native code
-      run: npx expo prebuild --platform android
+      run: |
+        echo "=== 开始prebuild ==="
+        npx expo prebuild --platform android --clean
+        echo "=== prebuild完成 ==="
     
     - name: Build Android APK
       run: |
+        echo "=== 开始Gradle构建 ==="
         cd android
-        ./gradlew assembleDebug
+        ./gradlew assembleDebug --stacktrace --info
+        echo "=== Gradle构建完成 ==="
     
     - name: Upload APK artifact
       uses: actions/upload-artifact@v4
